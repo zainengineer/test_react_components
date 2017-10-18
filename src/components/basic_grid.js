@@ -7,11 +7,12 @@ import ReactTable from "react-table";
 import "react-table/react-table.css";
 
 class BasicGrid extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             data: makeData()
         };
+        console.log('called basicgrid constructor');
     }
     getColumns(){
         return [
@@ -55,6 +56,7 @@ class BasicGrid extends React.Component {
     }
     getTable(){
         const { data } = this.state;
+        console.log(this.state);
         return <ReactTable
             data={data}
             columns={this.getColumns()}
